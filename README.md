@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## Cài đặt Ngrx
+
+```bash
+npm install @ngrx/store @ngrx/effects --save
+```
+
+## Cài đặt WebSocket
+
+```bash
+npm install socket.io-client
+```

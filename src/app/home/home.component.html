@@ -1,0 +1,62 @@
+<div class="nav-bar">
+
+    <div class="div nav-item">Logo</div>
+    <div class="div nav-item">Home</div>
+    <div class="div nav-item" (click)="userId ? logout() : login()">{{userId ? "Logout":"Login"}}</div>
+
+</div>
+<div class="container">
+  <div class="calendar">
+
+    <div>
+      <div (click)="onSelectedHandle(index)" class="song-item" [class.selected]="selectedIndex === index"
+        *ngFor="let song of listSong; let index = index">
+        <div class="img-song">
+          <img width="60" height="60"
+            src="https://yt3.googleusercontent.com/j5Rbw-CnprYKAGlp9v-tgdTxko2NSW_1b_KI47gB6X0P63_USLOWK1feKElmvKL0gLNb9cqNFg=s900-c-k-c0x00ffffff-no-rj" />
+
+
+
+        </div>
+        <div class="song-description">
+          <p>{{song.song_name}}</p>
+          <p>{{song.singer}}</p>
+        </div>
+      </div>
+      <div class="music-player">
+        <audio #audioPlayer [src]="'http://'+ipAddresLocal+':3000/media/audio/'+selectedSong" autoplay
+          (timeupdate)="updateProgress()" (loadedmetadata)="setDuration()" (ended)="next()"></audio>
+        <div class="controls">
+
+          <div class="process-container">
+            <div class="progress-bar" (click)="seekAudio($event)">
+              <div class="progress" [style.width.%]="progress"></div>
+            </div>
+            <span id="current-time">{{ formatTime(currentTime) }}</span> /
+            <span id="duration">{{ formatTime(duration) }}</span>
+          </div>
+          <div class="button-group">
+            <button class="mode"></button>
+            <div>
+              <button (click)="back()" id="play-pause">BACK</button>
+              <button (click)="toggle()" id="play-pause">{{pauseText}}</button>
+              <button (click)="next()" id="play-pause">NEXT</button></div>
+              <div class="custom-select" (click)="toggleOptions()" tabindex="0">
+                <span class="selected-option">{{ selectedOption || placeholder }}</span>
+                <div class="options-container" *ngIf="isOpen">
+                    <div
+                        class="option"
+                        *ngFor="let option of options"
+                        (click)="selectOption(option)"
+                    >
+                        {{ option.label }}
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

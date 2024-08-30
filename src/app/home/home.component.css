@@ -1,0 +1,206 @@
+@media (max-width: 1980px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+/* Giao diện cho màn hình có chiều rộng dưới 480px */
+@media (max-width: 480px) {
+  .container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+}
+.word-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  padding: 16px;
+}
+.word-item {
+  width: 80%;
+  background-color: #c1e5e3;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px;
+}
+.nav-bar {
+  background-color: #ccc;
+  height: 60px;
+  position: sticky;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.nav-item{
+  font-weight:bold;
+}
+.nav-item:hover{
+  color:red;
+  /* font-weight:bold; */
+}
+.calendar {
+  padding: 25px;
+  width: auto;
+  background-color: #170f23;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow-y: scroll;
+}
+.calendar::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng thanh cuộn */
+}
+
+.calendar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền của thanh cuộn */
+}
+
+.calendar::-webkit-scrollbar-thumb {
+  background: #888; /* Màu của phần di chuyển của thanh cuộn */
+}
+
+.calendar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Màu khi hover trên phần di chuyển */
+}
+.img-song {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.song-item {
+  margin-bottom: 12px;
+  padding: 1px 18px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+}
+.song-description {
+  margin: 8px;
+}
+.song-item:hover {
+  background-color: #3a3344;
+  color: white;
+  cursor: pointer;
+}
+.song-item.selected {
+  background-color: #3a3344;
+  color: white;
+  border-color: #0056b3;
+}
+.music-player {
+  width: 300px;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: auto;
+  margin-bottom: 50px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#play-pause {
+  background-color: #555;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 12px;
+  width: 80px;
+}
+.process-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.progress-bar {
+  flex: 1;
+  height: 10px;
+  background-color: #444;
+  margin: 0 10px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress {
+  height: 100%;
+  background-color: #00bcd4;
+  width: 0;
+  border-radius: 5px;
+}
+
+#current-time,
+#duration {
+  font-size: 12px;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.mode {
+  background-color: #444;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+}
+.custom-select {
+  position: relative;
+  width: 200px;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #444;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.selected-option {
+  display: block;
+}
+
+.options-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #444;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #441;
+}
